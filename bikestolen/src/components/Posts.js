@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import cap from "./cap.PNG";
 
 const Posts = ({ posts, loading }) => {
   const [search, setSearch] = useState("");
@@ -30,16 +31,13 @@ const Posts = ({ posts, loading }) => {
               <div>Address : {post.address}</div>
               <div>Image : </div>
 
-              {post.media.image_url != "null" ? (
-                <img
-                  src={post.media.image_url}
-                  alt="this is car image"
-                  width="304"
-                  height="236"
-                />
-              ) : (
-                " "
-              )}
+              <img
+                src={post.media.image_url}
+                className="img-rounded"
+                alt="No image data"
+                width="304"
+                height="236"
+              />
             </li>
           ))}
       </ul>
